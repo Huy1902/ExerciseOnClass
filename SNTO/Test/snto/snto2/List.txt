@@ -1,0 +1,3 @@
+List.txt
+snto.inp
+snto.out

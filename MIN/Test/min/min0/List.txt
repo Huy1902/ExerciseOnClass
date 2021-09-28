@@ -1,0 +1,3 @@
+List.txt
+min.inp
+min.out
