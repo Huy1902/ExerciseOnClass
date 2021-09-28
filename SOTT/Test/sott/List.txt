@@ -1,0 +1,6 @@
+List.txt
+sott1
+sott2
+sott3
+sott4
+sott5

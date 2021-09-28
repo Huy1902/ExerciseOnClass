@@ -10,9 +10,9 @@ bool compare(const int &a, const int &b)
 
 int main()
 {
-    int n, m;
+    long long n, m;
     cin >> n >> m;
-    int a[1000001];
+    long long a[100001];
 
     for (int i = 1; i <= n; ++i)
     {
@@ -31,7 +31,7 @@ int main()
     for (int i = 1; i < n; ++i)
     {
         a[i] += a[i - 1];
-        int temp = a[i] - m;
+        long long temp = a[i] - m;
         if (temp % i == 0 && temp / i >= a[i + 1])
         {
             cout << temp / i;
@@ -39,7 +39,7 @@ int main()
         }
     }
     a[n] += a[n - 1];
-    int temp = a[n] - m;
+    long long temp = a[n] - m;
     if (temp % n == 0)
     {
         cout << temp / n;

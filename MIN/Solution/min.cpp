@@ -9,21 +9,35 @@ int main()
     int k;
     cin >> n >> k;
 
-    long long result = 0;
-    int n_digit = k;
-    while (k > 0)
+    std::string result = "";
+    while (n > 0 && k > 0)
     {
-        result = result * 10 + 5;
+        int temp = n % 10;
+        if (temp <= 5)
+        {
+            result = result + "5";
+        }
+        if (temp > 5)
+        {
+            int digit = 1;
+            while (n % 10 >= 5 && k > 0)
+            {
+                ++digit;
+                --k;
+                n /= 10;
+            }
+            if (k == 0)
+            {
+                break;
+            }
+            ++k;
+            result.insert(result.end(), digit, '5');
+        }
+        n /= 10;
         --k;
+        cout << result << '\n';
     }
-    //cout << result;
 
-    if (result > n)
-    {
-        cout << result;
-        return 0;
-    }
-    n /= std::pow(10, n_digit);
     cout << n + 1 << result;
 
     return 0;

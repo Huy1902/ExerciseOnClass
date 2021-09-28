@@ -1,0 +1,3 @@
+List.txt
+sott.inp
+sott.out

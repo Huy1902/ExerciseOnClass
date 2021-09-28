@@ -53,7 +53,8 @@ int main()
     if (std::abs(double(sum_a) / a - double(sum_b) / b) < epsilon)
     {
         int temp = gcd(sum_a, a);
-        cout << sum_a / temp << " " << a / temp;
+        cout << sum_a / temp << "\n"
+             << a / temp;
     }
     else
     {

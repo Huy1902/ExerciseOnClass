@@ -32,7 +32,7 @@ int main()
     std::string s;
     getline(cin, s);
     s.insert(s.end(), 1, ' ');
-    int a[1001];
+    int a[10001];
     int index = 0;
     for (int i = 0, range = s.size(); i < range; ++i)
     {
@@ -44,6 +44,7 @@ int main()
                 temp = temp * 10 + s[i] - '0';
                 ++i;
             }
+            //cout << temp << " ";
             a[index] = temp;
             ++index;
         }
@@ -53,6 +54,11 @@ int main()
     //     cout << a[i] << " ";
     // }
     std::sort(a, a + index, std::greater<int>());
+
+    // for (int i = 0; i < index; ++i)
+    // {
+    //     cout << a[i] << " ";
+    // }
     for (int i = 0; i < index; ++i)
     {
         if (checkPrimes(a[i]))
