@@ -12,7 +12,7 @@ int main()
 {
     long long n, m;
     cin >> n >> m;
-    long long a[100001];
+    long long a[1000001];
 
     for (int i = 1; i <= n; ++i)
     {
@@ -28,22 +28,25 @@ int main()
 
     a[0] = 0;
 
+    long long max = 0;
+    long long temp;
     for (int i = 1; i < n; ++i)
     {
         a[i] += a[i - 1];
-        long long temp = a[i] - m;
-        if (temp % i == 0 && temp / i >= a[i + 1])
+        temp = a[i] - m;
+        // /cout << "i la : " << i << "so bi chia la : " << temp - temp % i << '\n';
+        if (temp - temp % i > max * i)
         {
-            cout << temp / i;
-            return 0;
+            max = (temp - temp % i) / i;
         }
     }
     a[n] += a[n - 1];
-    long long temp = a[n] - m;
-    if (temp % n == 0)
+    temp = a[n] - m;
+    if (temp - temp % n > max * n)
     {
-        cout << temp / n;
+        max = (temp - temp % n) / n;
     }
+    cout << max;
 
     return 0;
 }
