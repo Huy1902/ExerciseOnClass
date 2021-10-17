@@ -3,18 +3,32 @@
 std::ifstream cin("trochoi.inp");
 std::ofstream cout("trochoi.out");
 
-void quickSort(int l, int r, int a[], int b[])
+bool less(const std::string &s1, const std::string &s2)
 {
-    int mid = a[(l + r) / 2];
+    if (s1.size() < s2.size())
+    {
+        return true;
+    }
+    if (s1.size() > s2.size())
+    {
+        return false;
+    }
+
+    return s1 < s2;
+}
+
+void quickSort(int l, int r, std::string a[], int b[])
+{
+    std::string mid = a[(l + r) / 2];
     int i = l;
     int j = r;
     while (i <= j)
     {
-        while (a[i] < mid)
+        while (less(a[i], mid))
         {
             ++i;
         }
-        while (a[j] > mid)
+        while (less(mid, a[j]))
         {
             --j;
         }
@@ -38,20 +52,20 @@ void quickSort(int l, int r, int a[], int b[])
 
 int main()
 {
-    std::string s[10001];
-    int number_char[10001];
-    int pos[10001];
+    std::string s[100000];
+    std::string number_char[100000];
+    int pos[100000];
     int n;
     cin >> n;
     for (int i = 0; i < n; ++i)
     {
         cin >> s[i];
-        int number = 0;
+        std::string number = "";
         for (int j = 0; j < s[i].size(); ++j)
         {
             if (s[i][j] >= '0' && s[i][j] <= '9')
             {
-                number = number * 10 + s[i][j] - 48;
+                number = number + s[i][j];
             }
         }
         number_char[i] = number;

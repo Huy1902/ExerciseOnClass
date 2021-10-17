@@ -1,0 +1,11 @@
+List.txt
+trochoi1
+trochoi10
+trochoi2
+trochoi3
+trochoi4
+trochoi5
+trochoi6
+trochoi7
+trochoi8
+trochoi9

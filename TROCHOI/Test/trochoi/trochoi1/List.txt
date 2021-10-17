@@ -1,0 +1,3 @@
+List.txt
+trochoi.inp
+trochoi.out
