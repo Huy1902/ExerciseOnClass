@@ -1,0 +1,3 @@
+List.txt
+sinhnhat.inp
+sinhnhat.out
